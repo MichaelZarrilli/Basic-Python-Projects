@@ -36,10 +36,18 @@ def report():
         f"{resources['coffee']}ml\nMoney: ${resources['money']}")
 
 def collect_money():
-    quarters = int(input("How many quarters?: ")) * 0.25
-    dimes = int(input("How many dimes?: ")) * 0.10
-    nickles = int(input("How many nickles?: ")) * 0.05
-    pennies = int(input("How many pennies?: ")) * 0.01
+    if request == "espresso":
+        print("Total cost = $1.50")
+    if request == "latte":
+        print("Total cost = $2.50")
+    if request == "cappucino":
+        print("Total cost = $3.00")
+    print("**COINS ONLY**")
+
+    quarters = int(input("Input your quarters: ")) * 0.25
+    dimes = int(input("Input your dimes: ")) * 0.10
+    nickles = int(input("Input your nickles: ")) * 0.05
+    pennies = int(input("Input your pennies: ")) * 0.01
     total = quarters + dimes + nickles + pennies
     if total >= MENU[request]['cost']:
         resources['money'] = resources['money'] + MENU[request]['cost']
